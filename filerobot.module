@@ -1,0 +1,14 @@
+<?php
+
+/**
+ * @file
+ * This file utilizes the presave hook to replace local media URLs to Filerobot URLs
+ */
+
+/**
+ * Implements hook_ENTITY_TYPE_presave
+ */
+function filerobot_file_presave(\Drupal\Core\Entity\EntityInterface $entity) 
+{
+	var_dump($entity);
+}

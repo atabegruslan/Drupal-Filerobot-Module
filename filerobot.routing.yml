@@ -1,0 +1,7 @@
+filerobot.admin_settings:
+  path: '/admin/config/filerobot'
+  defaults:
+    _form: '\Drupal\filerobot\Form\ModuleConfigurationForm'
+    _title: 'filerobot configuration screen'
+  requirements:
+    _permission: 'administer site configuration'
