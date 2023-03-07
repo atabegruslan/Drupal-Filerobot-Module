@@ -5,3 +5,35 @@ filerobot.admin_settings:
     _title: 'filerobot configuration screen'
   requirements:
     _permission: 'administer site configuration'
+
+filerobot.filerobot: 
+  path: '/filerobot'
+  defaults: 
+    _controller: '\Drupal\filerobot\Controller\FilerobotController::index'
+    _title: 'Welcome to Filerobot from Scaleflex'
+  requirements:
+    _permission: 'access content'
+
+filerobot.welcome:
+  path: '/filerobot'
+  defaults: 
+    _controller: '\Drupal\filerobot\Controller\FilerobotController::index'
+    _title: 'Welcome to Filerobot from Scaleflex'
+  requirements:
+    _permission: 'access content'
+
+filerobot.fmaw:
+  path: '/fmaw'
+  defaults: 
+    _controller: '\Drupal\filerobot\Controller\FilerobotController::fmaw'
+    _title: 'Filerobot Media Widget'
+  requirements:
+    _permission: 'access content'
+
+filerobot.log:
+  path: '/log'
+  defaults: 
+    _controller: '\Drupal\filerobot\Controller\FilerobotController::log'
+    _title: 'Sync Log'
+  requirements:
+    _permission: 'access content'

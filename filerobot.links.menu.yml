@@ -1,0 +1,6 @@
+filerobot.filerobot:
+  route_name: filerobot.filerobot  
+  title: 'Filerobot'
+  description: 'Filerobot from Scaleflex'
+  weight: 10
+  parent: system.admin

@@ -1,0 +1,14 @@
+filerobot.filerobot:
+  route_name: filerobot.filerobot  
+  base_route: filerobot.filerobot
+  title: 'Welcome'
+
+filerobot.fmaw:
+  route_name: filerobot.fmaw
+  base_route: filerobot.filerobot
+  title: 'FMAW'
+
+filerobot.log:
+  route_name: filerobot.log
+  base_route: filerobot.filerobot
+  title: 'Sync Log'
