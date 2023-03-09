@@ -8,25 +8,27 @@ class FilerobotController extends ControllerBase
 {
   public function index() 
   {
-        $build = [
-          '#markup' => $this->t('Filerobot welcome message and the Sync buttons goes here'),
-        ];
-        return $build;
+    return [
+      '#theme' => 'filerobot_template',
+      '#dummy_placeholder' => 'Welcome message and Sync buttons goes here',
+    ];
   }
   
   public function fmaw() 
   {
-        $build = [
-          '#markup' => $this->t('FMAW goes here'),
-        ];
-        return $build;
+    return [
+      '#theme' => 'fmaw_template',
+      '#token_var' => 'dummy',
+      '#sectemp_var' => 'dummy',
+      '#folder_var' => '/dummy',
+    ];
   }
   
   public function log() 
   {
-        $build = [
-          '#markup' => $this->t('Sync Table goes here'),
-        ];
-        return $build;
+    return [
+      '#theme' => 'filerobot_log_template',
+      '#dummy_placeholder' => 'Sync log table goes here',
+    ];
   }
 }

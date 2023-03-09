@@ -10,5 +10,31 @@
  */
 function filerobot_file_presave(\Drupal\Core\Entity\EntityInterface $entity) 
 {
-	var_dump($entity);
+	dd($entity);
+}
+
+/**
+ * Implements hook_theme().
+ */
+function filerobot_theme($existing, $type, $theme, $path) 
+{
+    return [
+        'filerobot_template' => [
+            'variables' => [
+                'dummy_placeholder' => NULL,
+            ],
+        ],
+        'fmaw_template' => [
+            'variables' => [
+                'token_var' => NULL,
+                'sectemp_var' => NULL,
+                'folder_var' => NULL,
+            ],
+        ],
+        'filerobot_log_template' => [
+            'variables' => [
+                'dummy_placeholder' => NULL,
+            ],
+        ],
+    ];
 }

@@ -58,12 +58,21 @@ class ModuleConfigurationForm extends ConfigFormBase {
   /**
    * {@inheritdoc}
    */
-  public function submitForm(array &$form, FormStateInterface $form_state) {
+  public function submitForm(array &$form, FormStateInterface $form_state) 
+  {
+    $folder = $form_state->getValue('folder');
+
+    if (substr($folder, 0, 1) !== '/') 
+    { 
+      $folder = '/' . $folder;
+    }
+
     $this->config('filerobot.admin_settings')
       ->set('token_var', $form_state->getValue('token'))
       ->set('sectemp_var', $form_state->getValue('sectemp'))
-      ->set('folder_var', $form_state->getValue('folder'))
+      ->set('folder_var', $folder)
       ->save();
+
     parent::submitForm($form, $form_state);
   }
 
