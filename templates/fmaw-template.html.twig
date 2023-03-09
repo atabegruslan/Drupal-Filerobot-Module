@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="https://cdn.scaleflex.it/plugins/filerobot-widget/1.0.105/filerobot-widget.min.css?func=proxy" />
+</head>
+<body>
+<div id="filerobot-widget"></div>
+
+<script src="https://cdn.scaleflex.it/plugins/filerobot-widget/1.0.105/filerobot-widget.min.js?func=proxy"></script>
+
+<script>
+(async() => {
+    var Filerobot = window.Filerobot;
+
+    var filerobot = Filerobot.Core({
+        securityTemplateID : '{{ sectemp_var }}',
+        container          : '{{ token_var }}',
+    });
+
+    // Plugins
+    var Explorer  = Filerobot.Explorer;
+    var XHRUpload = Filerobot.XHRUpload;
+
+    // Optional plugins:
+    var ImageEditor = Filerobot.ImageEditor;
+    var Webcam      = Filerobot.Webcam;
+
+    filerobot
+        .use(Explorer, {
+            config: {
+                rootFolderPath: '{{ folder_var }}',
+            },
+            target : '#filerobot-widget',
+            inline : true,
+            width: '100%',
+            height: '100%',
+            disableExportButton: true, 
+            hideExportButtonIcon: true, 
+            preventExportDefaultBehavior: true,
+            hideUploadButton: true, // Hides the Upload button
+            locale: {
+              strings: {
+                mutualizedExportButtonLabel: 'Add' // Customizes the Export button's text
+              }
+            },
+        })
+        .use(XHRUpload)
+        .on('export', (files, popupExportSucessMsgFn, downloadFilesPackagedFn, downloadFileFn) => {
+
+        })
+        .on('complete', ({failed, uploadID, successful}) => {
+
+        });
+})();
+</script>
+</body>
+</html>
