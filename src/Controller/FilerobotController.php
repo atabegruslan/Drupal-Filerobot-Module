@@ -16,11 +16,15 @@ class FilerobotController extends ControllerBase
   
   public function fmaw() 
   {
+    $token = \Drupal::config('filerobot.admin_settings')->get('token_var');
+    $sectemp = \Drupal::config('filerobot.admin_settings')->get('sectemp_var');
+    $folder = \Drupal::config('filerobot.admin_settings')->get('folder_var');
+
     return [
       '#theme' => 'fmaw_template',
-      '#token_var' => 'dummy',
-      '#sectemp_var' => 'dummy',
-      '#folder_var' => '/dummy',
+      '#token_var' => $token,
+      '#sectemp_var' => $sectemp,
+      '#folder_var' => $folder,
     ];
   }
   
