@@ -32,7 +32,28 @@ class FilerobotController extends ControllerBase
   {
     return [
       '#theme' => 'filerobot_log_template',
-      '#dummy_placeholder' => 'Sync log table goes here',
+      '#log_data' => [ // Dummy data below. In reality, @Todo: need to retrieve from DB
+        [
+          'id' => 1,
+          'node_id' => 42,
+          'local_name' => 'localname.jpg',
+          'remote_name' => 'remotename.jpg',
+          'uuid' => 'xxxx-xxxx-xxxx',
+          'sha1' => 'yyyyyyyyyyyy',
+          'container' => '/afolder',
+          'status' => true,
+        ],
+        [
+          'id' => 2,
+          'node_id' => 42,
+          'local_name' => 'localname.jpg',
+          'remote_name' => 'remotename.jpg',
+          'uuid' => 'xxxx-xxxx-xxxx',
+          'sha1' => 'yyyyyyyyyyyy',
+          'container' => '/afolder',
+          'status' => true,
+        ],
+      ],
     ];
   }
 }

@@ -1,1 +1,29 @@
-<p>{{ dummy_placeholder }}</p>
+<table>
+    <thead>
+	    <tr>
+	        <th>ID</th>
+	        <th>Node ID</th>
+	        <th>Local Name</th>
+	        <th>Remote Name</th>
+	        <th>UUID</th>
+	        <th>SHA1</th>
+	        <th>Container</th>
+	        <th>Successfully Synced?</th>
+	    </tr>
+    </thead>
+
+    <tbody>
+    {% for row in log_data %}
+        <tr>
+            <td>{{ row.id }}</td>
+            <td>{{ row.node_id }}</td>
+            <td>{{ row.local_name }}</td>
+            <td>{{ row.remote_name }}</td>
+            <td>{{ row.uuid }}</td>
+            <td>{{ row.sha1 }}</td>
+            <td>{{ row.container }}</td>
+            <td>{{ row.status }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
