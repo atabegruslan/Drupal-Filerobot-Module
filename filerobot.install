@@ -39,13 +39,6 @@ function filerobot_schema()
 			'not null' => TRUE,
 			'default' => '',
 	    ),
-	    'remote_name' => array(
-			'description' => 'Name of the media file on the Filerobot platform',
-			'type' => 'varchar',
-			'length' => 255,
-			'not null' => TRUE,
-			'default' => '',
-	    ),
 	    'sha1' => array(
 			'description' => 'Filerobot\'s sha1 of the media file',
 			'type' => 'varchar',

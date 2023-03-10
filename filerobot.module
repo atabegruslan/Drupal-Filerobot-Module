@@ -10,7 +10,7 @@
  */
 function filerobot_file_presave(\Drupal\Core\Entity\EntityInterface $entity) 
 {
-	dd($entity);//@Todo: This is yet unfinished
+	kint($entity);//@Todo: This is yet unfinished
 }
 
 /**
@@ -33,7 +33,7 @@ function filerobot_theme($existing, $type, $theme, $path)
         ],
         'filerobot_log_template' => [
             'variables' => [
-                'dummy_placeholder' => NULL,
+                'log_data' => NULL,
             ],
         ],
     ];
