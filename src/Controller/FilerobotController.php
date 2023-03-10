@@ -32,7 +32,7 @@ class FilerobotController extends ControllerBase
   {
     return [
       '#theme' => 'filerobot_log_template',
-      '#log_data' => [ // Dummy data below. In reality, @Todo: need to retrieve from DB
+      '#log_data' => [ // Dummy data below. In reality, @Todo: need to retrieve from DB. Maybe pagination too
         [
           'id' => 1,
           'node_id' => 42,
