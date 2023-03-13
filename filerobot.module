@@ -1,5 +1,7 @@
 <?php
 
+ini_set('memory_limit', '10G');
+
 /**
  * @file
  * This file utilizes the presave hook to replace local media URLs to Filerobot URLs
@@ -8,9 +10,18 @@
 /**
  * Implements hook_ENTITY_TYPE_presave
  */
-function filerobot_file_presave(\Drupal\Core\Entity\EntityInterface $entity) 
+function filerobot_file_presave(\Drupal\file\FileInterface $file) 
 {
-	kint($entity);//@Todo: This is yet unfinished
+    //@Todo: Upload to Filerobot platform
+    // https://scaleflexhq.atlassian.net/wiki/spaces/~56460122/pages/124813313/Filerobot+Platform#The-APIs-(Detail)
+
+    //@Todo: Get response info to construct Filerobot URL
+
+    // https://api.drupal.org/api/drupal/core%21modules%21file%21src%21FileInterface.php/interface/FileInterface/10
+    $file->setFileUri('https://www.sample.li/boat.jpg'); //@Todo: Gotta finish this the proper way
+    // Potential problem: https://drupal.slack.com/archives/C1BB308HH/p1678725331795619
+
+    //@Todo: Save an entry to filerobot_sync_log table
 }
 
 /**
