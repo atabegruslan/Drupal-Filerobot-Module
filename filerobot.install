@@ -1,5 +1,23 @@
 <?php
 
+/**
+ * Implements hook_install().
+ */
+function filerobot_install() {
+  // Add configuration options to set the default alt text value.
+  $config = \Drupal::configFactory()->getEditable('filerobot.admin_settings');
+  $config->set('activation', TRUE)->save();
+  $config->set('uploadDirectory', '/')->save();
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function filerobot_uninstall() {
+  // Remove the configuration options when the module is uninstalled.
+  \Drupal::configFactory()->getEditable('filerobot.admin_settings')->delete();
+}
+
 function filerobot_schema()
 {
 	$schema['filerobot_sync_logs'] = array(

@@ -1,0 +1,14 @@
+fr-library:
+  version: 1.8.0
+  js:
+    https://scaleflex.cloudimg.io/v7/plugins/filerobot-widget/1.8.0/filerobot-widget.min.js?vh=62d509&func=proxy: { type: external, minified: true }
+  css:
+    theme:
+      https://scaleflex.cloudimg.io/v7/plugins/filerobot-widget/1.8.0/filerobot-widget.min.css?vh=5d88e1&func=proxy: {}
+
+filerobot-js:
+  version: 1.0.0
+  js:
+    assets/js/filerobot.js: {
+      attributes: { id : "filerobot-js" }
+    }
