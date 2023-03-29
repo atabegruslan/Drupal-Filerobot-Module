@@ -2,7 +2,7 @@
 
 function filerobot_schema()
 {
-	$schema['filerobot_sync_log'] = array(
+	$schema['filerobot_sync_logs'] = array(
 	  'description' => 'Filerobot sync log table',
 	  'fields' => array(
 	    'id' => array(
@@ -63,6 +63,5 @@ function filerobot_schema()
 	  ),
 	  'primary key' => array('id'),
 	);
-
 	return $schema;
 }

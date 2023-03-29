@@ -8,7 +8,7 @@
 /**
  * Implements hook_ENTITY_TYPE_presave
  */
-function filerobot_file_presave(\Drupal\file\FileInterface $file) 
+function filerobot_file_presave(\Drupal\file\FileInterface $file)
 {
     //@Todo: Upload to Filerobot platform
     // https://scaleflexhq.atlassian.net/wiki/spaces/~56460122/pages/124813313/Filerobot+Platform#The-APIs-(Detail)
@@ -19,13 +19,13 @@ function filerobot_file_presave(\Drupal\file\FileInterface $file)
     $file->setFileUri('https://www.sample.li/boat.jpg'); //@Todo: Gotta finish this the proper way
     // Potential problem: https://drupal.slack.com/archives/C1BB308HH/p1678725331795619
 
-    //@Todo: Save an entry to filerobot_sync_log table
+    //@Todo: Save an entry to filerobot_sync_logs table
 }
 
 /**
  * Implements hook_theme().
  */
-function filerobot_theme($existing, $type, $theme, $path) 
+function filerobot_theme($existing, $type, $theme, $path)
 {
     return [
         'filerobot_template' => [
@@ -35,9 +35,9 @@ function filerobot_theme($existing, $type, $theme, $path)
         ],
         'fmaw_template' => [
             'variables' => [
-                'token_var' => NULL,
-                'sectemp_var' => NULL,
-                'folder_var' => NULL,
+                'token' => NULL,
+                'SEC' => NULL,
+                'uploadDirectory' => NULL,
             ],
         ],
         'filerobot_log_template' => [
@@ -46,4 +46,18 @@ function filerobot_theme($existing, $type, $theme, $path)
             ],
         ],
     ];
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function filerobot_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'media_library_add_form') {
+    $form['actions']['submit']['#submit'][] = 'filerobot_media_library_add_form_submit';
+  }
+}
+
+function filerobot_media_library_add_form_submit($form, &$form_state) {
+  // Your custom code to handle the file upload goes here.
+  echo 'override';
 }
