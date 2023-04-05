@@ -23,46 +23,6 @@ function filerobot_file_presave(\Drupal\file\FileInterface $file)
 }
 
 /**
- * Implements hook_theme().
- */
-function filerobot_theme($existing, $type, $theme, $path)
-{
-    return [
-        'filerobot_template' => [
-            'variables' => [
-                'dummy_placeholder' => NULL,
-            ],
-        ],
-        'fmaw_template' => [
-            'variables' => [
-                'token' => NULL,
-                'SEC' => NULL,
-                'uploadDirectory' => NULL,
-            ],
-        ],
-        'filerobot_log_template' => [
-            'variables' => [
-                'log_data' => NULL,
-            ],
-        ],
-    ];
-}
-
-/**
- * Implements hook_form_alter().
- */
-function filerobot_form_alter(&$form, &$form_state, $form_id) {
-  if ($form_id == 'media_library_add_form') {
-    $form['actions']['submit']['#submit'][] = 'filerobot_media_library_add_form_submit';
-  }
-}
-
-function filerobot_media_library_add_form_submit($form, &$form_state) {
-  // Your custom code to handle the file upload goes here.
-  echo 'override';
-}
-
-/**
  * Implements hook_page_attachments().
  */
 function filerobot_page_attachments(array &$attachments) {
